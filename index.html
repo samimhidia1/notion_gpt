@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth Callback</title>
+</head>
+<body>
+    <h1>OAuth Callback Handler</h1>
+    <div id="code"></div>
+    <script>
+        function getAuthCode() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            document.getElementById('code').innerText = 'Authorization Code: ' + code;
+            // You can also handle the code exchange here or send it to your server
+        }
+
+        window.onload = getAuthCode;
+    </script>
+</body>
+</html>
+
